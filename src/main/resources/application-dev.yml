@@ -1,0 +1,5 @@
+#
+# Application setting for dev
+#
+server:
+    port: 8081

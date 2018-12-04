@@ -1,0 +1,5 @@
+#
+# Application settings for pro
+#
+server:
+    port: 8082
