@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+}
+
+/** Button Stylesheet*/
+.mat-flat-button {
+  margin-right: 8px;
+}

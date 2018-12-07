@@ -1,4 +1,4 @@
 delete from tbl_book;
-INSERT INTO tbl_book (id, name, price) VALUES (1, 'Spring Boot - Spring Data JPA with Hibernate and H2 Web Console', 0.0);
-INSERT INTO tbl_book (id, name, price) VALUES (2, 'Spring Boot - Spring Data JPA with Hibernate and H2 Web Console', 0.0);
-INSERT INTO tbl_book (id, name, price) VALUES (3, 'Spring Boot - Spring Data JPA with Hibernate and H2 Web Console', 0.0);
+INSERT INTO tbl_book (id, name, price, type, CREATION_DATE) VALUES (1, 'La signora in Fucsia', 0.0, 'Giallo', CURRENT_DATE());
+INSERT INTO tbl_book (id, name, price, type, CREATION_DATE) VALUES (2, 'Balla con i cupi', 0.0, 'Poliziesco', CURRENT_DATE());
+INSERT INTO tbl_book (id, name, price, type, CREATION_DATE) VALUES (3, 'Cenerantola', 0.0, 'Animazione', CURRENT_DATE());

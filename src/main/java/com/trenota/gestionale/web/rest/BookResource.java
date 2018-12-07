@@ -35,6 +35,7 @@ public class BookResource {
     }
 
     @PutMapping("/books")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Book> updateCustomer(@Valid @RequestBody Book book) throws URISyntaxException {
         if (book.getId() == null) {
             //TODO: manage exception
@@ -51,12 +52,14 @@ public class BookResource {
     }
 
     @GetMapping("/books/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Book> getCustomer(@PathVariable Long id) {
         Optional<Book> book = bookService.findOne(id);
         return ResponseUtil.wrapOrNotFound(book);
     }
 
     @DeleteMapping("/books/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
         bookService.delete(id);
         return ResponseEntity.ok().build();

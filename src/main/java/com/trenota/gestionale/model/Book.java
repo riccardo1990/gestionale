@@ -1,6 +1,7 @@
 package com.trenota.gestionale.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_book")
@@ -11,13 +12,10 @@ public class Book {
     private Long id;
     private String name;
     private Double price;
+    private String type;
+    private Date creationDate;
 
     public Book() {
-    }
-
-    public Book(String name, Double price) {
-        this.name = name;
-        this.price = price;
     }
 
     public Long getId() {
@@ -44,12 +42,19 @@ public class Book {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }

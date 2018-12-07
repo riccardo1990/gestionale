@@ -1,0 +1,46 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" (click)="bookDetails()"><mat-icon>info</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="book Name" formControlName="book_name"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('book_name').valid && bookForm.get('book_name').touched">Please enter book Name</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="book price" formControlName="book_price"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('book_price').valid && bookForm.get('book_price').touched">Please enter book Price</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="book type" formControlName="book_type"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('book_type').valid && bookForm.get('book_type').touched">Please enter book Type</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="book_creationDate"
+                [errorStateMatcher]="matcher">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>
+          <span *ngIf="!bookForm.get('book_creationDate').valid && bookForm.get('book_creationDate').touched">Please enter book Creation Date</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!bookForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>
